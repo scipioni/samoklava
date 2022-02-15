@@ -260,8 +260,7 @@ pcbs:
         outline: plate
         layer: Edge.Cuts
     footprints:
-      jlc_order_number:
-        type: text
+      - type: text
         anchor:
           ref:
             - matrix_ring_home
@@ -269,6 +268,16 @@ pcbs:
         params:
           text: "JLCJLCJLCJLC"
           justify: left
+      - type: text
+        anchor:
+          ref:
+            - matrix_pinky_bottom
+          shift: [1 kx, -0.3 ky]
+        params:
+          text: "Scipio"
+          justify: left
+          width: 2
+          height: 2
   bottom_plate:
     include_keys: false
     outlines:
@@ -431,7 +440,7 @@ pcbs:
             - matrix_pinky_bottom
           shift: [0.75 kx, 0]
         params:
-          text: "samoklava v0.1\\nby soundmonster"
+          text: "samoklava v0.1\\nby Scipio"
           justify: left
       info_r:
         type: text
@@ -441,6 +450,6 @@ pcbs:
           shift: [0.75 kx, 0]
         params:
           layer: B.SilkS
-          text: "samoklava v0.1\\nby soundmonster"
+          text: "samoklava v0.1\\nby Scipio"
           justify: right mirror
 

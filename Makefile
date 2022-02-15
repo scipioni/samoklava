@@ -40,12 +40,17 @@ output/routed_pcbs/%-back.png: output/routed_pcbs/%.kicad_pcb
 	mkdir -p $(shell dirname $@)
 	${container_cmd} run ${container_args} yaqwsx/kikit:v0.7 pcbdraw -b --style builtin:oshpark-afterdark.json $< $@
 
+output/pcbs/top_plate.png: output/pcbs/top_plate.kicad_pcb
+	mkdir -p $(shell dirname $@)
+	${container_cmd} run ${container_args} yaqwsx/kikit:v0.7 pcbdraw --style builtin:oshpark-afterdark.json $< $@
+
+
 output/gerbers/%/gerbers.zip: output/routed_pcbs/%.kicad_pcb
 	mkdir -p $(shell dirname $@)
 	${container_cmd} run ${container_args} yaqwsx/kikit:v0.7 kikit fab jlcpcb --no-assembly $< $(shell dirname $@)
 
 clean:
-	rm -rf output
+	sudo rm -rf output
 
 all: \
 	output/routed_pcbs/board-front.png \
