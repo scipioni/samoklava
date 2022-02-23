@@ -103,10 +103,10 @@ outlines:
         points:
           - ref: matrix_inner_bottom
             shift: [0.5 kx + 0.5px, -0.5 ky + 0.5 py]
-          - ref: matrix_inner_bottom
-            shift: [0.5 kx + 11.5px, -0.5 ky - 12.5 py]
           - ref: thumbfan_far_thumb
-            shift: [0.5 kx + 8.5px, 0.5 ky - 1.5 py]
+            shift: [0.5 kx - 0.5px, 0.5 ky + 0.5 py]
+          - ref: thumbfan_far_thumb
+            shift: [0.5 kx - 0.5px, -0.5 ky - 0.5 py]
           - ref: thumbfan_near_thumb
             shift: [-0.5 kx + 0.5 px, -0.5 ky - 0.5 py]
           - ref: matrix_pinky_bottom
