@@ -36,3 +36,16 @@ If you would like to modify this:
   * check the `output` folder for KiCad PCBs and Gerbers
 
 See the [workflow](.github/workflows/build.yml) or the [Makefile](Makefile) for more details.
+
+
+## Test layout
+
+* https://ergogen.cache.works/
+
+Upload samoklava.json except pcbs section. I print on paper with dxf format on qcad and:
+* edit sheet properties -> printer offset -60,-60  
+
+## Convert output dxf to png
+
+```
+```

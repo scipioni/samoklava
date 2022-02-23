@@ -1,7 +1,8 @@
+
 units:
   kx: cx
   ky: cy
-  px: 2
+  px: 4
   py: 2
 points:
   key:
@@ -30,26 +31,30 @@ points:
     matrix:
       # anchor:
       #   rotate: 5
-      key.padding: ky
+      key.padding: 1 ky 
       columns:
         pinky:
           stagger: 0 ky
           spread: kx
+          rotate: 12
           key:
             column_net: P20
         ring:
           stagger: 0.7 ky
           spread: kx
+          rotate: -7
           key:
             column_net: P19
         middle:
           stagger: 0.2 ky
           spread: kx
+          rotate: -5
           key:
             column_net: P18
         index:
           stagger: -0.2 ky
           spread: kx
+          rotate: -0
           key:
             column_net: P15
         inner:
@@ -67,7 +72,7 @@ points:
     thumbfan:
       anchor:
         ref: matrix_inner_bottom
-        shift: [-1.5 kx, -1 ky]
+        shift: [-1.5 kx, -1.0 ky]
       columns:
         near:
           spread: kx
@@ -102,7 +107,7 @@ outlines:
       - type: polygon
         points:
           - ref: matrix_inner_bottom
-            shift: [0.5 kx + 0.5px, -0.5 ky + 0.5 py]
+            shift: [0.5 kx + 0.6px, -0.5 ky + 0.5 py]
           - ref: thumbfan_far_thumb
             shift: [0.5 kx - 0.5px, 0.5 ky + 0.5 py]
           - ref: thumbfan_far_thumb
@@ -182,32 +187,32 @@ outlines:
         type: circle
         anchor:
           - ref: matrix_ring_home
-            shift: [-0.5 kx, 0 ky]
-        radius: 1.05
+            shift: [-0.55 kx, 0 ky]
+        radius: 0.80
       bottom_left:
         type: circle
         anchor:
           - ref: matrix_pinky_bottom
-            shift: [0.5 kx, 0]
-        radius: 1.05
+            shift: [0.6 kx, 0]
+        radius: 0.80
       top_right:
         type: circle
         anchor:
           - ref: matrix_inner_top
             shift: [-0.5 kx, 0]
-        radius: 1.05
+        radius: 0.80
       palm:
         type: circle
         anchor:
           - ref: matrix_index_bottom
             shift: [0, -1.06 ky]
-        radius: 1.05
+        radius: 0.80
       thumb:
         type: circle
         anchor:
           - ref: thumbfan_far_thumb
             shift: [-0.55 kx, 0]
-        radius: 1.05
+        radius: 0.80
     mounting_holes:
       $extends: outlines.exports.screw_holes
       top_left:
@@ -274,10 +279,11 @@ pcbs:
             - matrix_pinky_bottom
           shift: [1 kx, -0.3 ky]
         params:
-          text: "Scipio"
+          text: ""
           justify: left
           width: 2
           height: 2
+          rotate: -15
   bottom_plate:
     include_keys: false
     outlines:
@@ -440,7 +446,7 @@ pcbs:
             - matrix_pinky_bottom
           shift: [0.75 kx, 0]
         params:
-          text: "samoklava v0.1\\nby Scipio"
+          text: "samoklava v0.2\\nby Scipio"
           justify: left
       info_r:
         type: text
@@ -450,6 +456,5 @@ pcbs:
           shift: [0.75 kx, 0]
         params:
           layer: B.SilkS
-          text: "samoklava v0.1\\nby Scipio"
+          text: "samoklava v0.2\\nby Scipio"
           justify: right mirror
-
