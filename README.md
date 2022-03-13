@@ -45,7 +45,8 @@ See the [workflow](.github/workflows/build.yml) or the [Makefile](Makefile) for 
 Upload samoklava.json except pcbs section. I print on paper with dxf format on qcad and:
 * edit sheet properties -> printer offset -60,-60  
 
-## Convert output dxf to png
+## Convert output dxf to svg
 
 ```
+https://convertio.co/
 ```
