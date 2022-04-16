@@ -20,8 +20,8 @@ output/pcbs/%.dsn: output/pcbs/%.kicad_pcb
 
 output/routed_pcbs/%.ses: output/pcbs/%.dsn
 	mkdir -p $(shell dirname $@)
-	${container_cmd} run ${container_args} soundmonster/freerouting_cli:v0.1.0 java -jar /opt/freerouting_cli.jar -de $< -do $@
-
+	${container_cmd} run ${container_args} soundmonster/freerouting_cli:v0.1.0 java -jar /opt/freerouting_cli.jar -de $< -do $@ -ap 50 -fo -pp 50
+	
 output/routed_pcbs/%.kicad_pcb: output/routed_pcbs/%.ses output/pcbs/%.kicad_pcb
 	mkdir -p $(shell dirname $@)
 	# file can not be present or the script will refuse to run
