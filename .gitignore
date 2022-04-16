@@ -3,3 +3,5 @@ output
 venv
 *.blend1
 .vscode
+/bin
+/logs
