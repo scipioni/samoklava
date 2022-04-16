@@ -52,10 +52,15 @@ output/gerbers/%/gerbers.zip: output/routed_pcbs/%.kicad_pcb
 clean:
 	sudo rm -rf output
 
-all: \
+png: \
 	output/routed_pcbs/board-front.png \
-	output/routed_pcbs/board-back.png \
+	output/routed_pcbs/board-back.png
+
+all: \
 	output/gerbers/top_plate/gerbers.zip \
 	output/gerbers/bottom_plate/gerbers.zip \
 	output/gerbers/board/gerbers.zip
 
+
+kicad: output/gerbers/board/gerbers.zip
+	kicad output/routed_pcbs/board.kicad_pro

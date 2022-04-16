@@ -265,7 +265,8 @@ pcbs:
         outline: plate
         layer: Edge.Cuts
     footprints:
-      - type: text
+      jlc_order_number:
+        type: text
         anchor:
           ref:
             - matrix_ring_home
@@ -273,17 +274,6 @@ pcbs:
         params:
           text: "JLCJLCJLCJLC"
           justify: left
-      - type: text
-        anchor:
-          ref:
-            - matrix_pinky_bottom
-          shift: [1 kx, -0.3 ky]
-        params:
-          text: ""
-          justify: left
-          width: 2
-          height: 2
-          rotate: -15
   bottom_plate:
     include_keys: false
     outlines:
